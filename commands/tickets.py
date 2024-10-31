@@ -79,7 +79,8 @@ class Tickets(commands.Cog):
             text="Designerlc Team",
             icon_url="https://r2.e-z.host/17a2b375-7193-4f28-94c4-be10a3e7c1b4/d5zm1xpi.webp"
         )
-        await Panel.send(embed=embed, view=TicketSelector(bot=self.bot))
+        embed2 = discord.Embed(color=discord.Color.lighter_grey()).set_image(url="https://r2.e-z.host/17a2b375-7193-4f28-94c4-be10a3e7c1b4/uddqod3k.png")
+        await Panel.send(embeds=[embed2, embed], view=TicketSelector(bot=self.bot))
 
 def setup(bot: commands.Bot):
     bot.add_cog(Tickets(bot))
