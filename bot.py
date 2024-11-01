@@ -28,10 +28,12 @@ def load_cogs():
         #--To load views put them in on_ready.py !!!--
         bot.load_extension('commands.reviews')
         bot.load_extension("commands.tickets")
+        bot.load_extension("commands.settingsCommands")
         
         #listeners
         print("Loading listeners")
         bot.load_extension('listeners.on_ready')
+        bot.load_extension('listeners.on_join')
         print("Listeners Loaded")
         
     except Exception as e:

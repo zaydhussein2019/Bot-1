@@ -75,7 +75,7 @@ class manageTicket(discord.ui.View):
             )
             await interaction.edit_original_response(embed=embed)
 
-    @discord.ui.button(label="Delete", style=discord.ButtonStyle.primary, custom_id="del_ticket", emoji="🗑️")
+    @discord.ui.button(label="Delete", style=discord.ButtonStyle.danger, custom_id="del_ticket", emoji="🗑️")
     async def del_ticket_callback(
         self,
         button, 
