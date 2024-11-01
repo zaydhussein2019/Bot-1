@@ -10,11 +10,44 @@
         "Role": 1266202276008296448,
         "ManagementRole": 1266159176128659477,
         "OwnershipRole": 1266244737275400243,
-        "Type": {}
+        "Type": {
+            "chironthefr": "Ownership"
+        }
     },
     "Systems": {
         "Welcoming": {
             "Channel": 1266192784625504289
+        }
+    },
+    "Infractions": {
+        "asicalug": {
+            "Warns": {
+                "Count": 1,
+                "1": {
+                    "Reason": "je suis gay",
+                    "Mod": "<@1080643375960707092>"
+                }
+            },
+            "Count": 1
+        },
+        "Circle": {
+            "Warns": {
+                "Count": 1,
+                "1": {
+                    "Reason": "noob",
+                    "Mod": "<@1208440310598733824>"
+                }
+            },
+            "Count": 1
+        },
+        "chironthefr": {
+            "Warns": {
+                "Count": 1,
+                "1": {
+                    "Mod": "<@1005272991678074920>"
+                }
+            },
+            "Count": 1
         }
     }
 }
