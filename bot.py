@@ -29,6 +29,7 @@ def load_cogs():
         bot.load_extension('commands.reviews')
         bot.load_extension("commands.tickets")
         bot.load_extension("commands.settingsCommands")
+        bot.load_extension('commands.infraction')
         
         #listeners
         print("Loading listeners")
