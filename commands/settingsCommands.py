@@ -34,5 +34,41 @@ class SettingsCommand(commands.Cog):
         )
         await ctx.interaction.edit_original_response(embed=embed)
 
+    @settings.command(
+        name="sync",
+        description="syncs commands to the bot"
+    )
+    @commands.has_permissions(administrator=True)
+    async def sync(
+        self,
+        ctx: discord.ApplicationContext, 
+        guild: Option(discord.Guild, description="the guild you want to sync the commands to", required=False), #type: ignore
+    ):
+        embed = discord.Embed(
+            title="Syncing...",
+            description="Syncing bot commands",
+            color=discord.Color.yellow()
+        )
+        await ctx.interaction.response.send_message(embed=embed, ephemeral=True)
+        if guild != None:
+            embed = discord.Embed(
+                title="Syncing...",
+                description=f"Syncing bot commands to `{guild.name}`...",
+                color=discord.Color.yellow()
+            )
+            await ctx.interaction.edit_original_response(embed=embed)
+            await self.bot.sync_commands(guild_ids=guild.id)
+        if guild == None:
+            embed = discord.Embed(
+                title="Syncing...",
+                description=f"Syncing bot commands globally.",
+                color=discord.Color.yellow()
+            )
+            await ctx.interaction.edit_original_response(embed=embed)
+            await self.bot.sync_commands()
+
+
+
+
 def setup(bot: commands.Bot):
     bot.add_cog(SettingsCommand(bot))

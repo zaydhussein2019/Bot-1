@@ -17,9 +17,8 @@ class Ready(commands.Cog):
     async def on_ready(self):
         print(f"{self.bot.user} is ready")
         activity = discord.Activity(
-            name="Roblox",
-            details="On ER:LC",
-            type=discord.ActivityType.playing,
+            name="@Designerlc",
+            type=discord.ActivityType.watching,
             assets={"large_image": "roblox", "small_image": "roblox"}
         )
         await self.bot.change_presence(status=discord.Status.online, activity=activity)        

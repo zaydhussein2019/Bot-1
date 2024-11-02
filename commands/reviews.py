@@ -41,7 +41,7 @@ class Reviews(commands.Cog):
         self,
         ctx: discord.ApplicationContext,
         designer: Option(discord.Member, description="the designer you want to review", required=True), #type: ignore
-        product: Option(description="the product the designer made that you want to review", required=True), #type: ignore
+        product: Option(description="the product the designer made that you want to review", required=True, choices=["please give me a list theo", "theo likes men"]), #type: ignore
         rating: Option(int, description="The rating you want to give /5", required=True), #type: ignore
         note: Option(str, description="Anything else to add? Put it here.", require=False) #type: ignore
     ):

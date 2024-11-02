@@ -7,7 +7,7 @@ class onJoin(commands.Cog):
         print(f"{self.__class__.__name__} loaded")
 
     @commands.Cog.listener()
-    async def on_member_join(self, member):
+    async def on_member_join(self, member: discord.Member):
         print("hi")
         channel = self.bot.get_channel(self.bot.settings.get('Systems.Welcoming.Channel'))
         if channel is not None:
@@ -18,7 +18,7 @@ class onJoin(commands.Cog):
             )
             embed.set_thumbnail(url=member.avatar.url)
             embed.set_footer(text="Need help? Open a ticket!", icon_url="https://r2.e-z.host/17a2b375-7193-4f28-94c4-be10a3e7c1b4/d5zm1xpi.webp")
-            await channel.send(f'Welcome {member.mention}.')
+            await channel.send(f'<:DE_Wave:1301549861119852618> {member.mention}, welcome to *@designerlc* (#`{member.guild.member_count}`)')
         if channel is None:
             print("Welcome Channel has NOT been set. I will not be able to welcome new members. Please set it by using /settings welcoming.")
 

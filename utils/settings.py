@@ -38,6 +38,19 @@ class Settings:
             del obj[keys[-1]]  # Remove the specified key
         self._save_settings()
 
+    def print_keys(self, key: str):
+        """Return a list of keys at a specified path within the settings JSON."""
+        keys = key.split('.')
+        obj = self.settings
+        for k in keys:
+            obj = obj.get(k, None)
+            if obj is None:
+                return []  # Return an empty list if the key path doesn't exist
+        if isinstance(obj, dict):
+            return list(obj.keys())
+        else:
+            return []  # Return an empty list if the specified path is not a dictionary
+            
     def _save_settings(self):
         with open("./settings.json", "w") as f:
             json.dump(self.settings, f, indent=4)

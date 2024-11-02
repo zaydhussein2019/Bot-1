@@ -8,7 +8,12 @@ from dotenv import load_dotenv
 import asyncio
 import inspect
 
+discord.Bot.sync_commands
+
 intents = discord.Intents.default()
+intents.members = True
+intents.messages = True
+intents.message_content = True
 
 bot = commands.Bot(intents=intents)
 bot.settings = Settings()
@@ -30,6 +35,8 @@ def load_cogs():
         bot.load_extension("commands.tickets")
         bot.load_extension("commands.settingsCommands")
         bot.load_extension('commands.infraction')
+        bot.load_extension("commands.say")
+        bot.load_extension("commands.embed")
         
         #listeners
         print("Loading listeners")

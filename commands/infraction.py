@@ -129,8 +129,5 @@ class Infractions(commands.Cog):
         mods.clear()
 
         
-        
-        
-
 def setup(bot: commands.Bot):
     bot.add_cog(Infractions(bot))
